@@ -2254,6 +2254,12 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
+.stext-302 {
+  font-family: Montserrat-Bold;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ M-Text 16 - 25 ]*/
@@ -2651,7 +2657,7 @@ input.num-product::-webkit-inner-spin-button {
 .bg7 {background-color: #333;}
 .bg8 {background-color: #f3f3f3;}
 .bg9 {background-color: rgba(255,255,255,0.9);}
-
+.bg10 {background-color: #484848;}
 /*---------------------------------------------*/
 .bg-overlay1::before {
   content: "";

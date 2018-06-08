@@ -29,7 +29,7 @@
         
         @media only screen and (min-width: 768px) {
             ul {
-                background-color: lightblue;
+                /*background-color: lightblue;*/
             }
             .main-menu > li:hover > .sub-menu{
                 width: 1000px;
@@ -228,12 +228,6 @@
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
 			<ul class="topbar-mobile">
-				<!--<li>-->
-					<!--<div class="left-top-bar">-->
-						<!--Free shipping for standard order over $100-->
-					<!--</div>-->
-				<!--</li>-->
-
 				<li>
 					<div class="right-top-bar flex-w h-full">
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
@@ -994,100 +988,30 @@
 		</div>
 	</section>
 
-
 	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
+	<footer class="bg10 p-t-30 p-b-30 p-l-50 p-r-50">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Categories
+                        CONTACT CUSTOMER CARE
+                        1 (888) 937-8020
 					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
+					<p style="font-size: 13px;">1 (888) 937-8020<br>
+                        1 (786) 871-6005 (International customers)<br>
+                        Monday through Friday: 12pm - 7pm EST<br>
+                        support@flightclub.com
+                    </p>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-sm-6 col-lg-4 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Help
+                        @CMOFFICIAL
 					</h4>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
-
-					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-sm-6 col-lg-5 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
 						Newsletter
 					</h4>
@@ -1112,23 +1036,6 @@
 					<a href="#" class="m-all-1">
 						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
-					</a>
-				</div>
 
 				<p class="stext-107 cl6 txt-center">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
