@@ -4,37 +4,23 @@
 	<title>Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/megamenu.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<!--===============================================================================================-->
 	<style>
 		.col-xs-4.col-sm-3.col-md-3.col-lg-2.isotope-item{
 			padding-left: 0px;
@@ -61,7 +47,6 @@
 	<!-- Header -->
 	<header>
 		<!-- Header desktop -->
-
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
 			<div class="top-bar">
@@ -88,84 +73,130 @@
 				</div>
 			</div>
 
-			<div class="wrap-menu-desktop">
-                <nav class="limiter-menu-desktop container">
-
-					<!-- Menu desktop -->
-
-					<ul class="menu-desktop">
-
-						<ul class="main-menu">
-                            <li>
-                                <a href="index.php">HOME</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.php">Homepage 1</a></li>
-                                    <li><a href="home-02.html">Homepage 2</a></li>
-                                    <li><a href="home-03.html">Homepage 3</a></li>
-                                </ul>
-                            </li>
-
-							<li><a href="">NIKE</a>
-								<ul class="sub-menu">
-                                    <div class="row">
-                                    <div class="col-md-3">
-                                        <h3><strong class="text-uppercase">nike basketball</strong></h3>
-                                        <li><a href="#">Blazer</a></li>
-                                        <li><a href="#">Charles Barkley</a></li>
-                                        <li><a href="#">Kelvin Durant</a></li>
-                                        <li><a href="#">Kobe Bryant</a></li>
-                                        <li><a href="#">Others Basketball</a></li>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3><strong class="text-uppercase">nike cros-training</strong></h3>
-                                        <li><a href="#">Trainer</a></li>
-                                        <li><a href="#">Griffey</a></li>
-                                        <li><a href="#">Other Cross-Training</a></li>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3><strong class="text-uppercase">nike running</strong></h3>
-                                        <li><a href="#">Air max</a></li>
-                                        <li><a href="#">Flyknit</a></li>
-                                        <li><a href="#">Presto</a></li>
-                                        <li><a href="#">Roshe Run</a></li>
-                                        <li><a href="#">Others Running</a></li>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3><strong class="text-uppercase">nike cros-training</strong></h3>
-                                        <li><a href="#">Trainer</a></li>
-                                        <li><a href="#">Griffey</a></li>
-                                        <li><a href="#">Other Cross-Training</a></li>
-                                    </div>
-                                    </div>
-								</ul>
-							</li>
-
-							<li>
-								<a href="">ADIDAS</a>
-							</li>
-							<li>
-								<a href="">VANS</a>
-							</li>
-							<li>
-								<a href="">REEBOX</a>
-							</li>
-							<li>
-								<a href="">NEW BALANCE</a>
-							</li>
-
-							<li>
-								<a href="">FOOTWARE</a>
-							</li>
-
-							<li class="label1" data-label1="hot">
-							    <a href="shoping-cart.html">NEW ARRIVALS</a>
-							</li>
-
-						</ul>
-
-					</ul>
-				</nav>
-			</div>	
+<!--			<div class="wrap-menu-desktop">-->
+<!--                <nav class="limiter-menu-desktop container">-->
+<!---->
+<!--					<!-- Menu desktop -->
+<!--					<ul class="menu-desktop">-->
+<!--						<ul class="main-menu">-->
+<!--                            <li>-->
+<!--                                <a href="index.php">HOME</a>-->
+<!--                                <ul class="sub-menu">-->
+<!--                                    <li><a href="index.php">Homepage 1</a></li>-->
+<!--                                    <li><a href="home-02.html">Homepage 2</a></li>-->
+<!--                                    <li><a href="home-03.html">Homepage 3</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!---->
+<!--							<li><a href="">NIKE</a>-->
+<!--								<ul class="sub-menu">-->
+<!--                                    <div class="row">-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <h3><strong class="text-uppercase">nike basketball</strong></h3>-->
+<!--                                        <li><a href="#">Blazer</a></li>-->
+<!--                                        <li><a href="#">Charles Barkley</a></li>-->
+<!--                                        <li><a href="#">Kelvin Durant</a></li>-->
+<!--                                        <li><a href="#">Kobe Bryant</a></li>-->
+<!--                                        <li><a href="#">Others Basketball</a></li>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <h3><strong class="text-uppercase">nike cros-training</strong></h3>-->
+<!--                                        <li><a href="#">Trainer</a></li>-->
+<!--                                        <li><a href="#">Griffey</a></li>-->
+<!--                                        <li><a href="#">Other Cross-Training</a></li>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <h3><strong class="text-uppercase">nike running</strong></h3>-->
+<!--                                        <li><a href="#">Air max</a></li>-->
+<!--                                        <li><a href="#">Flyknit</a></li>-->
+<!--                                        <li><a href="#">Presto</a></li>-->
+<!--                                        <li><a href="#">Roshe Run</a></li>-->
+<!--                                        <li><a href="#">Others Running</a></li>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <h3><strong class="text-uppercase">nike cros-training</strong></h3>-->
+<!--                                        <li><a href="#">Trainer</a></li>-->
+<!--                                        <li><a href="#">Griffey</a></li>-->
+<!--                                        <li><a href="#">Other Cross-Training</a></li>-->
+<!--                                    </div>-->
+<!--                                    </div>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!---->
+<!--							<li>-->
+<!--								<a href="">ADIDAS</a>-->
+<!--							</li>-->
+<!--							<li>-->
+<!--								<a href="">VANS</a>-->
+<!--							</li>-->
+<!--							<li>-->
+<!--								<a href="">REEBOX</a>-->
+<!--							</li>-->
+<!--							<li>-->
+<!--								<a href="">NEW BALANCE</a>-->
+<!--							</li>-->
+<!---->
+<!--							<li>-->
+<!--								<a href="">FOOTWARE</a>-->
+<!--							</li>-->
+<!---->
+<!--							<li class="label1" data-label1="hot">-->
+<!--							    <a href="shoping-cart.html">NEW ARRIVALS</a>-->
+<!--							</li>-->
+<!---->
+<!--						</ul>-->
+<!---->
+<!--					</ul>-->
+<!--				</nav>-->
+<!--			</div>	-->
+            <div class="wrap-menu-desktop">
+                <div class="navbar">
+                    <a href="#">HOME</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">NIKE
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="row">
+                                <div class="column">
+                                    <strong class="text-uppercase">nike basketball</strong>
+                                    <a href="#">Blazer</a>
+                                    <a href="#">Charles Barkley</a>
+                                    <a href="#">Kelvin Durant</a>
+                                    <a href="#">Kobe Bryant</a>
+                                    <a href="#">Others Basketball</a>
+                                </div>
+                                <div class="column">
+                                    <strong class="text-uppercase">nike cros-training</strong>
+                                    <a href="#">Trainer</a>
+                                    <a href="#">Griffey</a>
+                                    <a href="#">Other Cross-Training</a>
+                                </div>
+                                <div class="column">
+                                    <strong class="text-uppercase">nike running</strong>
+                                    <a href="#">Air max</a>
+                                    <a href="#">Flyknit</a>
+                                    <a href="#">Presto</a>
+                                    <a href="#">Roshe Run</a>
+                                    <a href="#">Others Running</a>
+                                </div>
+                                <div class="column">
+                                    <strong class="text-uppercase">nike cros-training</strong>
+                                    <a href="#">Trainer</a>
+                                    <a href="#">Griffey</a>
+                                    <a href="#">Other Cross-Training</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">ADIDAS</a>
+                    <a href="#">VANS</a>
+                    <a href="#">REEBOX</a>
+                    <a href="#">NEW BALANCE</a>
+                    <a href="#">FOOTWARE</a>
+                    <a class="label1" data-label1="hot" href="#">NEW ARRIVALS</a>
+                </div>
+            </div>
 		</div>
 
 		<!-- Header Mobile -->
@@ -193,7 +224,6 @@
 				</span>
 			</div>
 		</div>
-
 
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
@@ -257,21 +287,6 @@
 			</ul>
 		</div>
 
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
-				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
 	</header>
 
 	<!-- Cart -->
