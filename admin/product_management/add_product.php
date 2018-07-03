@@ -120,37 +120,37 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 
                             <input type='button' value='checkall' onclick="checkAll('size_chkbox')">
                             <br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="4">4<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="4.5">4.5<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="5">5<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="5.5">5.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="4">4<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="4.5">4.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="5">5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="5.5">5.5<br>
                         </div>
                         <div class="col-md-1">
                             <input type='button' value='uncheck' onclick="uncheckAll('size_chkbox')">
                             <br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="6">6<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="6.5">6.5<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="7">7<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="7.5">7.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="6">6<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="6.5">6.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="7">7<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="7.5">7.5<br>
 
                         </div>
                         <div class="col-md-1">
                             <br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="8">8<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="8.5">8.5<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="9">9<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="9.5">9.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="8">8<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="8.5">8.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="9">9<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="9.5">9.5<br>
                         </div>
                         <div class="col-md-1">
                             <br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="10">10<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="10.5">10.5<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="11">11<br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="11.5">11.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="10">10<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="10.5">10.5<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="11">11<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="11.5">11.5<br>
                         </div>
                         <div class="col-md-1">
                             <br>
-                            <input type='checkbox' name='size_chkbox[]' class ='size_chkbox' id='size_chkbox' value="12">12<br>
+                            <input type='checkbox' name='size_chkbox' class ='size_chkbox' id='size_chkbox' value="12">12<br>
                         </div>
                     </div>
                     <br>
@@ -172,7 +172,7 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 
                     <div class="row">
                         <div class="col-md-1">
-<!--                            <a class="btn btn-success add" href="javascript:$('#file_upload').uploadifive('upload')">Upload Files</a>-->
+                            <!--                            <a class="btn btn-success add" href="javascript:$('#file_upload').uploadifive('upload')">Upload Files</a>-->
                             <button class="btn btn-success add" >Upload Files</button>
                         </div>
                     </div>
@@ -227,7 +227,7 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 </script>
 
 
-<script>
+<script type="text/javascript">
 
 
     $(".add").click(function(){
@@ -237,11 +237,19 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
         var product_type = $('#product_type').val();
         var product_price = $('#product_price').val();
 
+        // 05/06/2018
+        var size_chkbox = new Array();
+            $("input:checkbox[name=size_chkbox]:checked").each(function(){
+            size_chkbox.push($(this).val());
+        });
+        //console.log(size_chkbox);
+        //var json = JSON.stringify(size_chkbox);
         if(confirm('Are you sure to add this record ?'))
         {
-            // var size_chkbox = $('#size_chkbox').val();
-            //var jsonString = JSON.stringify(size_chkbox);
-
+            if(product_name!=""){
+            createCookie("product_name",product_name);
+            console.log(getCookie("product_name"));
+            }
 
             $.ajax({
                 url: 'check_add.php',
@@ -250,47 +258,31 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
                     product_name: product_name,
                     product_type: product_type,
                     product_price: product_price,
-                    //$size_chkbox: jsonString,
+                    size_chkbox: size_chkbox,
                 },
                 error: function() {
                     alert('Something is wrong');
                 },
                 success: function(data) {
-
+                    console.log(data)
+                    wait(1000); //1000 = 1 seconds
                     $('#file_upload').uploadifive('upload');
-                    wait(1500); //1000 = 1 seconds
+                    wait(1000);
+                    order();
                     alert("Record added successfully");
                 }
             });
 
-
         }
     });
 
-
-
-    function wait(ms){
-        var start = new Date().getTime();
-        var end = start;
-        while(end < start + ms) {
-            end = new Date().getTime();
-        }
-    }
-</script>
-
-
-<!--uploadifive-->
-<script src="uploadifive/jquery.min.js" type="text/javascript"></script>
-<script src="uploadifive/jquery.uploadifive.min.js" type="text/javascript"></script>
-<script src="uploadifive/jquery.uploadifive.js" type="text/javascript"></script>
-<script type="text/javascript">
     <?php $timestamp = time();?>
     $(function() {
+        //var product_name = getCookie("product_name");
         $('#file_upload').uploadifive({
             'auto'             : false,
             'checkScript'      : 'uploadifive/check-exists.php',
             'formData'         : {
-                'product_name': pp,
                 'timestamp' : '<?php echo $timestamp;?>',
                 'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
             },
@@ -299,6 +291,53 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
             'onUploadComplete' : function(file, data) { console.log(data); }
         });
     });
+
+    function wait(ms){
+        var start = new Date().getTime();
+        var end = start;
+        while(end < start + ms) {
+            end = new Date().getTime();
+        }
+    }
+
+    function createCookie(name, value) {
+        var date = new Date();
+        date.setTime(date.getTime()+(5*1000)); // 5 seconds
+        var expires = "; expires="+date.toGMTString();
+
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function order() {
+        $.get("order_product.php");
+        return false;
+    }
+
+</script>
+
+
+<!--uploadifive-->
+<script src="uploadifive/jquery.min.js" type="text/javascript"></script>
+<script src="uploadifive/jquery.uploadifive.min.js" type="text/javascript"></script>
+<script src="uploadifive/jquery.uploadifive.js" type="text/javascript"></script>
+<script type="text/javascript">
+
 </script>
 
 

@@ -12,10 +12,19 @@ $product_name = $_POST["product_name"];
 $product_type = $_POST["product_type"];
 $product_price = $_POST["product_price"];
 
+//$size_chkbox = $_POST["size_chkbox"];
 
-$size_chkbox = implode(",",$_POST["size_chkbox"]);
+//parse_str($size_chkbox,$new_data);
+////Now We have the new array saved in a variable called $new_data
+//var_dump($new_data);
+//parse_str($size_chkbox,$new_data);
+//$_SESSION["Check"] = $size_chkbox;
 
 
+$_SESSION["Check"] = $size_chkbox = implode(",",$_POST["size_chkbox"]);
+//$size_chkbox=null;
+
+//echo $size_chkbox;
 
 //
 //// Set the allowed file extensions
@@ -62,4 +71,4 @@ VALUES ('" . $product_name . "','" . $brand_id . "','" . $size_chkbox . "','" . 
 //
 //
 ////header('Location: project.php');
-//?>
+

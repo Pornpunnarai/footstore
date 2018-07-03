@@ -13,7 +13,7 @@ $dbName = "cmofficial_shoesstore";
 $objCon = mysqli_connect($serverName,$username,$password,$dbName);
 mysqli_set_charset($objCon,"utf8");
 
-$product_name = $_POST["product_name"];
+$product_name = $_COOKIE["product_name"];
 
 // Set the uplaod directory
 $uploadDir = '/uploads/';
@@ -38,7 +38,7 @@ if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
         // Save to Database as Blob
         $picture = addslashes(file_get_contents($tempFile));
 
-        $sql = "INSERT INTO image_detail (`order`, `project_id`, `image`) VALUES
+        $sql = "INSERT INTO image_detail (`order`, `product_id`, `image`) VALUES
     ('" . 1 . "',(SELECT id from product WHERE name='$product_name'),'" . $picture . "')";
         $objQuery = mysqli_query($objCon, $sql);
 

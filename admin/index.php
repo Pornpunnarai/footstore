@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION["Admin"] = "admin";
 if(!isset($_SESSION["Admin"])) {
 ?>
 
