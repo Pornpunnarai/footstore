@@ -127,6 +127,7 @@ $db = new database($serverName,$username,$password,$dbName);
         .how-pos3{
             top: 0px;
         }
+
     </style>
 </head>
 
