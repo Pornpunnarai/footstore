@@ -9,7 +9,9 @@ include '../../connect-mysql.php';
 $uploadDir = 'uploads/';
 
 $id = $_POST["id"];
-$description = $_POST["description"];
+$first_field = $_POST["first_field"];
+$second_field = $_POST["second_field"];
+$btn_name = $_POST["btn_name"];
 $link = $_POST["link"];
 
 $selection = $_POST["selection"];
@@ -73,8 +75,8 @@ if ($uploadOk == 0) {
         $objQuery = mysqli_query($objCon, $sql);
         $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
         $order = $result["max"]+1;
-        $sql = "INSERT INTO `slider`(`order`,`description`, `file`, `link`, `modified_date`)
-        VALUES ('" . $order . "','" . $description . "','" . $filename . "','" . $link . "','" . $date . "')";
+        $sql = "INSERT INTO `slider`(`order`, `first_field`, `second_field`, `btn_name`, `file`, `link`, `modified_date`)
+        VALUES ('" . $order . "','" . $first_field . "','" . $second_field . "','" . $btn_name . "','" . $filename . "','" . $link . "','" . $date . "')";
         $objQuery = mysqli_query($objCon, $sql);
 
 

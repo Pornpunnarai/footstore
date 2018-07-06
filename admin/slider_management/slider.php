@@ -172,10 +172,12 @@ $db = new database($serverName,$username,$password,$dbName);
                         <tr>
                             <th width="5%">Order</th>
                             <th width="10%">Image/Video</th>
-                            <th width="10%">Description</th>
-                            <th width="5%">Status</th>
+                            <th width="10%">1st Field</th>
+                            <th width="10%">2nd Field</th>
+                            <th width="15%">Button Name</th>
                             <th width="15%">Modified Date</th>
-<!--                            <th width="5%">Detail</th>-->
+                            <!--                            <th width="5%">Detail</th>-->
+                            <th width="5%">Status</th>
                             <th width="5%">Edit</th>
                             <th width="5%">Delete</th>
                         </tr>
@@ -204,9 +206,25 @@ $db = new database($serverName,$username,$password,$dbName);
                                 <?php
                                 }
                                 ?>
-                                <td><?=$result["description"]?></td>
-                                <td><?=$result["status"]?></td>
+                                <td><?=$result["first_field"]?></td>
+                                <td><?=$result["second_field"]?></td>
+                                <td><?=$result["btn_name"]?></td>
                                 <td><?=$result["modified_date"]?></td>
+                                <td>
+                                    <br>
+                                    <?php
+                                    if ($result["status"] == "Hide") {
+                                        ?>
+                                        <button class="btn btn-success enable">Show</button>
+                                        <?php
+                                    } else{
+                                        ?>
+                                        <button class="btn btn-danger enable">Hide</button>
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+
                                 <td>
                                     <form action="edit_slider.php" method="post">
                                         <input type="hidden" name="id" value="<?=$result["id"]?>"><br>
@@ -346,7 +364,29 @@ $db = new database($serverName,$username,$password,$dbName);
 <!-- Footer-->
 <?php include '../footer-admin.php'?>
 
+<script>
+    $(".enable").click(function(){
+        var id = $(this).parents("tr").attr("id");
 
+        if(confirm('Are you sure to change status in this record ?'))
+        {
+            $.ajax({
+                url: 'check_enable.php',
+                type: 'POST',
+                data: {id: id},
+                error: function() {
+                    alert('Something is wrong');
+                },
+                success: function(data) {
+                    //$("#"+id).remove();
+                    alert("Record changed successfully");
+                    location.reload();
+                }
+            });
+        }
+    });
+
+</script>
 
 
 

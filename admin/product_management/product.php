@@ -54,7 +54,6 @@ $objQuery = mysqli_query($objCon,$sql);
                         <thead>
                         <tr style="text-align:center">
                             <th width="5%">No.</th>
-                            <th width="5%">ID</th>
                             <th width="30%">Preview Image</th>
                             <th width="20%">Brand</th>
                             <th width="15%">Name</th>
@@ -76,7 +75,6 @@ $objQuery = mysqli_query($objCon,$sql);
                             <tr id="<?php echo $result["product_id"] ?>">
                                 <input type="hidden" name="id" value="<?=$result["product_id"];?>">
                                 <td><?=$i;?></td>
-                                <td><?=$result["product_id"]?></td>
                                 <td><?='<img style="width:100%" src="data:image/jpeg;base64,'.base64_encode( $result['picture'] ).'"/>';?></td>
                                 <td><?=$result["brand_name"]?></td>
                                 <td><?= nl2br(htmlspecialchars($result["product_name"])); ?></td>

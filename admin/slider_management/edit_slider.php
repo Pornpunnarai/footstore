@@ -52,10 +52,30 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 
                     <div class="row">
                         <div class="col-md-2 text-right">
-                            Description <span style="color: red"> *</span>
+                            1st Field
                         </div>
                         <div class="col-md-6">
-                            <input type="input" class="form-control" name="description"value="<?= $result["description"];?>" required>
+                            <input type="input" class="form-control" name="first_field"value="<?= $result["first_field"];?>" >
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2 text-right">
+                            2nd Field
+                        </div>
+                        <div class="col-md-6">
+                            <input type="input" class="form-control" name="second_field"value="<?= $result["second_field"];?>">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2 text-right">
+                            Button Name
+                        </div>
+                        <div class="col-md-6">
+                            <input type="input" class="form-control" name="btn_name"value="<?= $result["btn_name"];?>" >
                         </div>
                     </div>
                     <br>

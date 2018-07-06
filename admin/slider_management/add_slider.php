@@ -52,10 +52,30 @@ include '../../connect-mysql.php';
 
                     <div class="row">
                         <div class="col-md-2 text-right">
-                            Description<span style="color: red"> *</span>
+                            1st Field
                         </div>
                         <div class="col-md-6">
-                            <input type="input" class="form-control" name="description" required>
+                            <input type="input" class="form-control" name="first_field" >
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2 text-right">
+                            2nd Field
+                        </div>
+                        <div class="col-md-6">
+                            <input type="input" class="form-control" name="second_field">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2 text-right">
+                            Button Name
+                        </div>
+                        <div class="col-md-6">
+                            <input type="input" class="form-control" name="btn_name" >
                         </div>
                     </div>
                     <br>

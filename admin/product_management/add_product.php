@@ -5,14 +5,14 @@ if(!isset($_SESSION["Admin"])) {
 }
 include '../../connect-mysql.php';
 
-$sql = "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'cmofficial_shoesstore' AND TABLE_NAME = 'product'";
+$sql = "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = '$dbName' AND TABLE_NAME = 'product'";
 $objQuery = mysqli_query($objCon, $sql);
 $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
+$product_id = $result["AUTO_INCREMENT"];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Add Product</title>
     <?php include '../headpart.html'?>
@@ -34,7 +34,6 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <?php include '../nav.html'?>
-
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -55,7 +54,7 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
                             ID:
                         </div>
                         <div class="col-md-10">
-                            <?= $result["AUTO_INCREMENT"];?></div>
+                            <?= $product_id;?></div>
                     </div>
                     <br>
 
@@ -184,8 +183,6 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 
 
 
-
-
 <!-- /.content-wrapper-->
 <footer class="sticky-footer">
     <div class="container">
@@ -228,8 +225,6 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 
 
 <script type="text/javascript">
-
-
     $(".add").click(function(){
 
         var brand_id = $('#brand_id').val();
@@ -242,15 +237,9 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
             $("input:checkbox[name=size_chkbox]:checked").each(function(){
             size_chkbox.push($(this).val());
         });
-        //console.log(size_chkbox);
-        //var json = JSON.stringify(size_chkbox);
+
         if(confirm('Are you sure to add this record ?'))
         {
-            if(product_name!=""){
-            createCookie("product_name",product_name);
-            console.log(getCookie("product_name"));
-            }
-
             $.ajax({
                 url: 'check_add.php',
                 type: 'POST',
@@ -264,11 +253,7 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
                     alert('Something is wrong');
                 },
                 success: function(data) {
-                    console.log(data)
-                    wait(1000); //1000 = 1 seconds
                     $('#file_upload').uploadifive('upload');
-                    wait(1000);
-                    order();
                     alert("Record added successfully");
                 }
             });
@@ -278,13 +263,13 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 
     <?php $timestamp = time();?>
     $(function() {
-        //var product_name = getCookie("product_name");
         $('#file_upload').uploadifive({
             'auto'             : false,
             'checkScript'      : 'uploadifive/check-exists.php',
             'formData'         : {
                 'timestamp' : '<?php echo $timestamp;?>',
-                'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+                'token'     : '<?php echo md5('unique_salt' . $timestamp);?>',
+                'product_id'     : '<?=$product_id?>'
             },
             'queueID'          : 'queue',
             'uploadScript'     : 'uploadifive/uploadifive.php',
@@ -292,37 +277,6 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
         });
     });
 
-    function wait(ms){
-        var start = new Date().getTime();
-        var end = start;
-        while(end < start + ms) {
-            end = new Date().getTime();
-        }
-    }
-
-    function createCookie(name, value) {
-        var date = new Date();
-        date.setTime(date.getTime()+(5*1000)); // 5 seconds
-        var expires = "; expires="+date.toGMTString();
-
-        document.cookie = name+"="+value+expires+"; path=/";
-    }
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
 
     function order() {
         $.get("order_product.php");
@@ -341,6 +295,42 @@ $result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 </script>
 
 
+
+
+
+
+<!--Modal-->
+<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+    <div class="overlay-modal1 js-hide-modal1"></div>
+    <div class="container">
+        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+            <div class="row" style="margin-top: 50px">
+                <div>
+                    <div class="col-md-12 text-center">
+                        <a href="javascript:void(0);" class="btn btn-saveinfo reorder_link" id="save">SHUFFLE & REORDER PHOTOS</a>
+                    </div>
+                    <button class="how-pos3 js-hide-modal1">
+                        <img src="/finedae/images/icons/icon-close.png" alt="CLOSE">
+                    </button>
+
+                    <div class="gallery">
+                        <ul class="reorder_ul reorder-photos-list">
+                            <?php
+                            $rows = $db->getRows();
+                            foreach($rows as $row):?>
+                                <li id="image_li_<?php echo $row['id']; ?>" class="ui-sortable-handle">
+                                    <a href="javascript:void(0);" style="float:none;" class="image_link">
+                                        <img style="width: 280px; height: 180px;" src="uploads/<?php echo $row['file_image']; ?>" alt="">
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
