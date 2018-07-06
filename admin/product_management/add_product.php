@@ -15,7 +15,48 @@ $product_id = $result["AUTO_INCREMENT"];
 <html lang="en">
 <head>
     <title>Add Product</title>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/finedae/finedae-admin/js/jquery-ui.js"></script>
+
     <?php include '../headpart.html'?>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //$('.reorder_link').on('click',function(){
+            $("ul.reorder-photos-list").sortable({ tolerance: 'pointer' });
+            $('#reorder-details').slideDown('slow');
+            $('.reorder_link').html('Save Shuffled Image');
+            $('.reorder_link').attr("id","save");
+            $('.image_link').attr("href","javascript:void(0);");
+            $('.image_link').css("cursor","move");
+            $("#save").click(function( e ){
+                if( !$("#save i").length )
+                {
+                    $(this).html('').prepend('<img src="img/loading.gif"/>');
+                    $("ul.reorder-photos-list").sortable('destroy');
+                    var h = [];
+                    $("ul.reorder-photos-list li").each(function() {  h.push($(this).attr('id').substr(9));  });
+                    $.ajax({
+                        type: "POST",
+                        url: "update.php",
+                        data: {ids: " " + h + ""},
+                        success: function(html)
+                        {
+                            window.location.reload();
+                        }
+                    });
+
+                    console.log(h);
+                    return false;
+                }
+                e.preventDefault();
+            });
+            //});
+        });
+    </script>
+
+    <link href="../css/modal_order.css" rel="stylesheet">
+
     <style>
         .uploadifive-button {
             float: left;
@@ -34,6 +75,7 @@ $product_id = $result["AUTO_INCREMENT"];
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <?php include '../nav.html'?>
+
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -46,7 +88,8 @@ $product_id = $result["AUTO_INCREMENT"];
         <!-- Example DataTables Card-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Add Product</div>
+                <i class="fa fa-table"></i> Add Product
+            </div>
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
                     <div class="row">
@@ -88,6 +131,7 @@ $product_id = $result["AUTO_INCREMENT"];
                         </div>
                     </div>
                     <br>
+
                     <div class="row">
                         <div class="col-md-2">
                             Type:
@@ -153,6 +197,7 @@ $product_id = $result["AUTO_INCREMENT"];
                         </div>
                     </div>
                     <br>
+
                     <div class="row">
                         <div class="col-md-2">
                             Image Detail :
@@ -168,20 +213,72 @@ $product_id = $result["AUTO_INCREMENT"];
                     </div>
                     <br>
 
-
                     <div class="row">
                         <div class="col-md-1">
                             <!--                            <a class="btn btn-success add" href="javascript:$('#file_upload').uploadifive('upload')">Upload Files</a>-->
                             <button class="btn btn-success add" >Upload Files</button>
                         </div>
                     </div>
+                </form>
+
+                <div class="col-md-3" style="margin-top: 25px; margin-left: 10px;">
+                    <button href="#" class="btn btn-primary js-show-modal1">
+                        Order
+                    </button>
+                </div>
+
             </div>
-            </form>
         </div>
     </div>
 </div>
 
+<!--Modal-->
+<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+    <div class="overlay-modal1 js-hide-modal1"></div>
+    <div class="container">
+        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+            <div class="row" style="margin-top: 50px">
+                <div>
+                    <div class="col-md-12 text-center">
+                        <a href="javascript:void(0);" class="btn btn-saveinfo reorder_link" id="save">SHUFFLE & REORDER PHOTOS</a>
+                    </div>
+                    <button class="how-pos3 js-hide-modal1">
+                        <img src="/finedae/images/icons/icon-close.png" alt="CLOSE">
+                    </button>
 
+                    <div class="gallery">
+                        <ul class="reorder_ul reorder-photos-list">
+                            <?php
+                            $rows = $db->getRows();
+                            foreach($rows as $row):?>
+                                <?php
+                                $mime = mime_content_type("uploaded/".$row['file']);
+                                if(strstr($mime, "video/")){
+                                    ?>
+                                    <li id="image_li_<?php echo $row['id']; ?>" class="ui-sortable-handle">
+                                        <a href="javascript:void(0);"style="float:none;" class="image_link">
+                                            <video controls style="width: 280px; height: 180px;"><source src="uploaded/<?php echo $row['file']; ?>" type="video/mp4"></video>
+                                        </a>
+                                    </li>
+                                    <?php
+                                }else if(strstr($mime, "image/")){
+                                    ?>
+                                    <li id="image_li_<?php echo $row['id']; ?>" class="ui-sortable-handle">
+                                        <a href="javascript:void(0);" style="float:none;" class="image_link">
+                                            <img style="width: 280px; height: 180px;" src="uploaded/<?php echo $row['file']; ?>" alt="">
+                                        </a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- /.content-wrapper-->
 <footer class="sticky-footer">
@@ -191,15 +288,15 @@ $product_id = $result["AUTO_INCREMENT"];
         </div>
     </div>
 </footer>
+
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fa fa-angle-up"></i>
 </a>
 
-<?php include '../allscripts.html'?>
-
 <!--checkbox-->
 <script src="../js/upload_pic.js"></script>
+
 <script type='text/javascript'>
     function checkAll(id)
     {
@@ -222,7 +319,6 @@ $product_id = $result["AUTO_INCREMENT"];
         }
     }
 </script>
-
 
 <script type="text/javascript">
     $(".add").click(function(){
@@ -286,51 +382,29 @@ $product_id = $result["AUTO_INCREMENT"];
 </script>
 
 
-<!--uploadifive-->
-<script src="uploadifive/jquery.min.js" type="text/javascript"></script>
-<script src="uploadifive/jquery.uploadifive.min.js" type="text/javascript"></script>
-<script src="uploadifive/jquery.uploadifive.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Page level plugin JavaScript-->
 
-</script>
-
-
-
-
-
+<script src="../vendor/datatables/jquery.dataTables.js"></script>
+<script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="../js/sb-admin.min.js"></script>
+<!-- Custom scripts for this page-->
+<script src="../js/sb-admin-datatables.min.js"></script>
 
 <!--Modal-->
-<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-    <div class="overlay-modal1 js-hide-modal1"></div>
-    <div class="container">
-        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-            <div class="row" style="margin-top: 50px">
-                <div>
-                    <div class="col-md-12 text-center">
-                        <a href="javascript:void(0);" class="btn btn-saveinfo reorder_link" id="save">SHUFFLE & REORDER PHOTOS</a>
-                    </div>
-                    <button class="how-pos3 js-hide-modal1">
-                        <img src="/finedae/images/icons/icon-close.png" alt="CLOSE">
-                    </button>
+<!--===============================================================================================-->
+<script src="/footstore/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="/footstore/vendor/bootstrap/js/popper.js"></script>
+<!--===============================================================================================-->
+<script src="/footstore/js/main.js"></script>
 
-                    <div class="gallery">
-                        <ul class="reorder_ul reorder-photos-list">
-                            <?php
-                            $rows = $db->getRows();
-                            foreach($rows as $row):?>
-                                <li id="image_li_<?php echo $row['id']; ?>" class="ui-sortable-handle">
-                                    <a href="javascript:void(0);" style="float:none;" class="image_link">
-                                        <img style="width: 280px; height: 180px;" src="uploads/<?php echo $row['file_image']; ?>" alt="">
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--uploadifive-->
+<script src="uploadifive/jquery.uploadifive.min.js" type="text/javascript"></script>
+<script src="uploadifive/jquery.uploadifive.js" type="text/javascript"></script>
 
 </body>
 </html>
