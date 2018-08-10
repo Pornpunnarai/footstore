@@ -45,11 +45,11 @@ $_SESSION["Check"] = $size_chkbox = implode(",",$_POST["size_chkbox"]);
 //    }
 //}
 
-
-$sql = "SELECT * FROM `product` WHERE `name` =  \"$product_name\"";
-$objQuery = mysqli_query($objCon,$sql);
-$result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
-if($result["name"]==NULL) {
+//
+//$sql = "SELECT * FROM `product` WHERE `name` =  \"$product_name\"";
+//$objQuery = mysqli_query($objCon,$sql);
+//$result = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
+//if($result["name"]==NULL) {
 
     $sql = "INSERT INTO `product`(`name`, `brand_id`, `size`, `price`, `type`)
 VALUES ('" . $product_name . "','" . $brand_id . "','" . $size_chkbox . "','" . $product_price . "','" . $product_type . "')";
@@ -63,7 +63,7 @@ VALUES ('" . $product_name . "','" . $brand_id . "','" . $size_chkbox . "','" . 
 
 
 
-}
+//}
 //
 //
 //

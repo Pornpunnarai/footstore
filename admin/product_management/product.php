@@ -5,7 +5,7 @@ if(!isset($_SESSION["Admin"])) {
 }
 include '../../connect-mysql.php';
 
-$sql = "SELECT p.*,b.name FROM product p LEFT JOIN brand b on p.brand_id = b.id";
+$sql = "SELECT p.*,b.name AS brand_name FROM product p LEFT JOIN brand b on p.brand_id = b.id ORDER BY p.id DESC";
 $objQuery = mysqli_query($objCon,$sql);
 ?>
 
@@ -57,8 +57,8 @@ $objQuery = mysqli_query($objCon,$sql);
                             <th width="30%">Preview Image</th>
                             <th width="20%">Brand</th>
                             <th width="15%">Name</th>
-                            <th width="15%">1st Price</th>
-                            <th width="15%">2nd Price</th>
+                            <th width="15%">Type</th>
+                            <th width="15%">Price</th>
                             <th width="4%">View</th>
                             <th width="4%">Edit</th>
                             <th width="4%">Delete</th>
@@ -71,15 +71,23 @@ $objQuery = mysqli_query($objCon,$sql);
                         {
 
                             ?>
-<!--                            <tr>-->
-                            <tr id="<?php echo $result["product_id"] ?>">
-                                <input type="hidden" name="id" value="<?=$result["product_id"];?>">
-                                <td><?=$i;?></td>
-                                <td><?='<img style="width:100%" src="data:image/jpeg;base64,'.base64_encode( $result['picture'] ).'"/>';?></td>
+                            <tr id="<?php echo $result["id"] ?>">
+                                <input type="hidden" name="id" value="<?=$result["id"];?>">
+                                <td>
+                                    <?=$i;?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $sql2 = "SELECT `order`,`file_image` FROM `image_detail` WHERE `product_id`= '".$result["id"]."' ORDER BY `order` ASC LIMIT 1";
+                                    $objQuery2 = mysqli_query($objCon,$sql2);
+                                    $result2 = mysqli_fetch_array($objQuery2, MYSQLI_ASSOC);
+//                                    ?>
+                                     <img style="width: 220px; height: 120px;" src="uploads/<?=$result['id']?>/<?=$result2['file_image']?>" alt="">
+                                </td>
                                 <td><?=$result["brand_name"]?></td>
-                                <td><?= nl2br(htmlspecialchars($result["product_name"])); ?></td>
-                                <td><?=$result["1st_price"]?></td>
-                                <td><?=$result["2nd_price"]?></td>
+                                <td><?= nl2br(htmlspecialchars($result["name"])); ?></td>
+                                <td><?=$result["type"]?></td>
+                                <td><?=$result["price"]?></td>
                                 <td>
                                     <form action="view_project.php" method="get">
                                         <input type="hidden" name="id" value="<?=$result["id"]?>"><br>

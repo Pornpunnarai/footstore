@@ -33,7 +33,7 @@ if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
     // Validate the filetype
     $fileParts = pathinfo($_FILES['Filedata']['name']);
 
-$i = 1;
+
     if (in_array(strtolower($fileParts['extension']), $fileTypes)) {
 
 //         Save the file

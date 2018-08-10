@@ -4,5 +4,6 @@ include ('../../connect-mysql.php');
 
 	$db = new database($serverName,$username,$password,$dbName);
 	$idArray = explode(",",$_POST['ids']);
-	$db->updateOrder($idArray);
+	$product_id = $_POST['product_id'];
+	$db->updateOrder($idArray,$product_id);
 ?>
