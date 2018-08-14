@@ -27,6 +27,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="css/megamenu.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <style>
         .col-xs-4.col-sm-3.col-md-3.col-lg-2.isotope-item{
             padding-left: 0px;
@@ -34,15 +35,22 @@ session_start();
         }
 
         @media only screen and (min-width: 768px) {
-            ul {
-                /*background-color: lightblue;*/
-            }
             .main-menu > li:hover > .sub-menu{
                 width: 1000px;
             }
             .main-menu:hover .sub-menu{
                 display: block;
             }
+        }
+
+        .btn-add{
+            background-color: #717fe0;
+        }
+
+        .btn{
+            border-radius: 50%;
+            height: 3rem;
+            width: 3rem;
         }
     </style>
 
@@ -65,9 +73,6 @@ session_start();
 
                 <div class="right-top-bar flex-w h-full">
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        Join/Sign In
-                    </a>
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
                         <div class="wrap-icon-header flex-w flex-r-m">
                             <div id="number_notify" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="0">
                                 <i class="zmdi zmdi-shopping-cart"></i>
@@ -79,82 +84,7 @@ session_start();
             </div>
         </div>
 
-        <!--			<div class="wrap-menu-desktop">-->
-        <!--                <nav class="limiter-menu-desktop container">-->
-        <!---->
-        <!--					<!-- Menu desktop -->
-        <!--					<ul class="menu-desktop">-->
-        <!--						<ul class="main-menu">-->
-        <!--                            <li>-->
-        <!--                                <a href="index.php">HOME</a>-->
-        <!--                                <ul class="sub-menu">-->
-        <!--                                    <li><a href="index.php">Homepage 1</a></li>-->
-        <!--                                    <li><a href="home-02.html">Homepage 2</a></li>-->
-        <!--                                    <li><a href="home-03.html">Homepage 3</a></li>-->
-        <!--                                </ul>-->
-        <!--                            </li>-->
-        <!---->
-        <!--							<li><a href="">NIKE</a>-->
-        <!--								<ul class="sub-menu">-->
-        <!--                                    <div class="row">-->
-        <!--                                    <div class="col-md-3">-->
-        <!--                                        <h3><strong class="text-uppercase">nike basketball</strong></h3>-->
-        <!--                                        <li><a href="#">Blazer</a></li>-->
-        <!--                                        <li><a href="#">Charles Barkley</a></li>-->
-        <!--                                        <li><a href="#">Kelvin Durant</a></li>-->
-        <!--                                        <li><a href="#">Kobe Bryant</a></li>-->
-        <!--                                        <li><a href="#">Others Basketball</a></li>-->
-        <!--                                    </div>-->
-        <!--                                    <div class="col-md-3">-->
-        <!--                                        <h3><strong class="text-uppercase">nike cros-training</strong></h3>-->
-        <!--                                        <li><a href="#">Trainer</a></li>-->
-        <!--                                        <li><a href="#">Griffey</a></li>-->
-        <!--                                        <li><a href="#">Other Cross-Training</a></li>-->
-        <!--                                    </div>-->
-        <!--                                    <div class="col-md-3">-->
-        <!--                                        <h3><strong class="text-uppercase">nike running</strong></h3>-->
-        <!--                                        <li><a href="#">Air max</a></li>-->
-        <!--                                        <li><a href="#">Flyknit</a></li>-->
-        <!--                                        <li><a href="#">Presto</a></li>-->
-        <!--                                        <li><a href="#">Roshe Run</a></li>-->
-        <!--                                        <li><a href="#">Others Running</a></li>-->
-        <!--                                    </div>-->
-        <!--                                    <div class="col-md-3">-->
-        <!--                                        <h3><strong class="text-uppercase">nike cros-training</strong></h3>-->
-        <!--                                        <li><a href="#">Trainer</a></li>-->
-        <!--                                        <li><a href="#">Griffey</a></li>-->
-        <!--                                        <li><a href="#">Other Cross-Training</a></li>-->
-        <!--                                    </div>-->
-        <!--                                    </div>-->
-        <!--								</ul>-->
-        <!--							</li>-->
-        <!---->
-        <!--							<li>-->
-        <!--								<a href="">ADIDAS</a>-->
-        <!--							</li>-->
-        <!--							<li>-->
-        <!--								<a href="">VANS</a>-->
-        <!--							</li>-->
-        <!--							<li>-->
-        <!--								<a href="">REEBOX</a>-->
-        <!--							</li>-->
-        <!--							<li>-->
-        <!--								<a href="">NEW BALANCE</a>-->
-        <!--							</li>-->
-        <!---->
-        <!--							<li>-->
-        <!--								<a href="">FOOTWARE</a>-->
-        <!--							</li>-->
-        <!---->
-        <!--							<li class="label1" data-label1="hot">-->
-        <!--							    <a href="shoping-cart.html">NEW ARRIVALS</a>-->
-        <!--							</li>-->
-        <!---->
-        <!--						</ul>-->
-        <!---->
-        <!--					</ul>-->
-        <!--				</nav>-->
-        <!--			</div>	-->
+
         <div class="wrap-menu-desktop">
             <div class="navbar">
                 <a href="#">HOME</a>
@@ -162,6 +92,7 @@ session_start();
                     <button class="dropbtn">NIKE
                         <i class="fa fa-caret-down"></i>
                     </button>
+
                     <div class="dropdown-content">
                         <div class="row">
                             <div class="column">
@@ -206,7 +137,6 @@ session_start();
                     <?php
                 }
                 ?>
-                <a class="label1" data-label1="hot" href="#">NEW ARRIVALS</a>
             </div>
         </div>
     </div>
@@ -340,11 +270,11 @@ session_start();
                 </div>
 
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                    <a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                         View Cart
                     </a>
 
-                    <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                    <a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                         Check Out
                     </a>
                 </div>
@@ -434,14 +364,14 @@ session_start();
                 <div class="block1 wrap-pic-w">
                     <img src="images/banner-01.jpg" alt="IMG-BANNER">
 
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                    <a href="product.php" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                         <div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
+									First Hand
 								</span>
 
                             <span class="block1-info stext-102 trans-04">
-									Spring 2018
+<!--									Spring 2018-->
 								</span>
                         </div>
 
@@ -459,14 +389,14 @@ session_start();
                 <div class="block1 wrap-pic-w">
                     <img src="images/banner-02.jpg" alt="IMG-BANNER">
 
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                    <a href="product.php" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                         <div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
+									Second Hand
 								</span>
 
                             <span class="block1-info stext-102 trans-04">
-									Spring 2018
+<!--									Spring 2018-->
 								</span>
                         </div>
 
@@ -484,14 +414,14 @@ session_start();
                 <div class="block1 wrap-pic-w">
                     <img src="images/banner-03.jpg" alt="IMG-BANNER">
 
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                    <a href="product.php" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                         <div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories
+									New Trend
 								</span>
 
                             <span class="block1-info stext-102 trans-04">
-									New Trend
+<!--									New Trend-->
 								</span>
                         </div>
 
@@ -773,7 +703,7 @@ session_start();
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     <?=$result["name"]?>
                                 </a>
 
@@ -864,7 +794,7 @@ session_start();
 
                                                 <div class="size-204 respon6-next">
                                                     <div class="rs1-select2 bor8 bg0">
-                                                        <select id="select_size<?=$result["id"]?>" class="js-select2" name="time">
+                                                        <select id="select_size<?=$result["id"]?>" class="js-select2" name="time" required>
                                                             <?php
                                                             $size = explode(",",$result["size"]);
                                                             ?>
@@ -946,41 +876,6 @@ session_start();
             }
             ?>
 
-
-            <!--				<div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 isotope-item men">-->
-            <!--					<!-- Block2 -->
-            <!--					<div class="block2">-->
-            <!--						<div class="block2-pic hov-img0">-->
-            <!--							<img src="images/shoes/3.jpg" alt="IMG-PRODUCT">-->
-            <!---->
-            <!--							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">-->
-            <!--								Quick View-->
-            <!--							</a>-->
-            <!--						</div>-->
-            <!---->
-            <!--						<div class="block2-txt flex-w flex-t p-t-14">-->
-            <!--							<div class="block2-txt-child1 flex-col-l ">-->
-            <!--								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">-->
-            <!--									Only Check Trouser-->
-            <!--								</a>-->
-            <!---->
-            <!--								<span class="stext-105 cl3">-->
-            <!--									$25.50-->
-            <!--								</span>-->
-            <!--							</div>-->
-            <!---->
-            <!--							<div class="block2-txt-child2 flex-r p-t-3">-->
-            <!--								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">-->
-            <!--									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">-->
-            <!--									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">-->
-            <!--								</a>-->
-            <!--							</div>-->
-            <!--						</div>-->
-            <!--					</div>-->
-            <!--				</div>-->
-
-
-
         </div>
 
         <!-- Load more -->
@@ -992,64 +887,7 @@ session_start();
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg10 p-t-30 p-b-30 p-l-50 p-r-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    CONTACT CUSTOMER CARE
-                    1 (888) 937-8020
-                </h4>
-                <p style="font-size: 13px;">1 (888) 937-8020<br>
-                    1 (786) 871-6005 (International customers)<br>
-                    Monday through Friday: 12pm - 7pm EST<br>
-                    support@flightclub.com
-                </p>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    @CMOFFICIAL
-                </h4>
-
-            </div>
-
-            <div class="col-sm-6 col-lg-5 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    Newsletter
-                </h4>
-
-                <form>
-                    <div class="wrap-input1 w-full p-b-4">
-                        <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-                        <div class="focus-input1 trans-04"></div>
-                    </div>
-
-                    <div class="p-t-18">
-                        <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-                            Subscribe
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="p-t-40">
-            <div class="flex-c-m flex-w p-b-18">
-                <a href="#" class="m-all-1">
-                    <img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
-                </a>
-
-                <p class="stext-107 cl6 txt-center">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                    All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                </p>
-            </div>
-        </div>
-</footer>
+<?php include 'footer.php'?>
 
 
 <!-- Back to top -->
@@ -1061,7 +899,6 @@ session_start();
 
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
 
 <script>
     $(document).ready(function(){
@@ -1160,7 +997,6 @@ session_start();
 
     });
 
-
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
@@ -1185,7 +1021,6 @@ session_start();
         document.cookie =
             "cart =" + value +'; expires=' + now.toUTCString() + '; path=/';
     }
-
 
     // ----------------------------------------------------
     var array = [];
@@ -1229,23 +1064,26 @@ session_start();
                 html += obj.name + " -SIZE("+obj.size+")";
                 html += "</a>";
                 html += "<span class=\"header-cart-item-info\">";
-                html += obj.quantity+" x ฿"+obj.price +"<br>";
-                html += parseInt(obj.quantity) * parseInt(obj.price);
+                html += obj.price +"฿ x "+ obj.quantity + "<br>";
+                // html += parseInt(obj.quantity) * parseInt(obj.price);
                 html += "</span>";
                 html += "</div>";
                 html += "</li>";
-                html += "<a onClick=addQuantity("+id+") href=\"#\">Increase</a>";
-                html += "<a onClick=subtractQuantity("+id+") href=\"#\">Decrease</a>";
-                html += " ||| <a onClick=removeFromCart("+id+") href=\"#\">Delete</a>";
+                html += "<li class=\"header-cart-item text-center\">";
+                html += "<a class=\"btn btn-add\" onClick=addQuantity("+id+") href=\"#\">";
+                html += "<span class=\"symbol-btn-back-to-top\"> <i class=\"zmdi zmdi-chevron-up\"></i>";
+                html += "</span></a>";
+                html += "| <a class=\"btn btn-add\" onClick=subtractQuantity("+id+") href=\"#\">";
+                html += "<span class=\"symbol-btn-back-to-top\"> <i class=\"zmdi zmdi-chevron-down\"></i>";
+                html += "</span></a>";
+                html += "| <a class=\"btn btn-danger\" onClick=removeFromCart("+id+") href=\"#\">";
+                html += "<span class=\"symbol-btn-back-to-top\"> <i class=\"zmdi zmdi-delete\"></i>";
+                html += "</span></a>";
                 html += "<input type=\"hidden\" id=\"quantity_input"+id+"\" value=\""+obj.quantity+"\">";
-
-
+                html += "</li>";
 
                 ele.innerHTML = html;
                 total_price += parseInt(obj.quantity) * parseInt(obj.price);
-
-
-
 
                 id++;
             }
@@ -1263,12 +1101,7 @@ session_start();
 
                 check_array.push(obj);
             }
-
-
 // console.log(Object.entries(check_array));
-
-
-
 
         } else {
             if (user != "" && user != null) {
@@ -1282,7 +1115,6 @@ session_start();
 
         }
     }
-
 
     function addQuantity(id){
         var quantity = document.getElementById("quantity_input"+id).value;;
@@ -1307,7 +1139,6 @@ session_start();
 
         checkCookie();
     }
-
 
     function subtractQuantity(id){
         var quantity = document.getElementById("quantity_input"+id).value;;
@@ -1356,8 +1187,6 @@ session_start();
         checkCookie();
 
     }
-
-
 
 // deleteCookie();
     function renderCartTable(id,name,price,image) {
